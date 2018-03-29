@@ -1,0 +1,36 @@
+--------------------------------------------------------------------------
+How to install the vim's highlighting rules for FreeFem++
+--------------------------------------------------------------------------
+
+let ${VIMHOME} the name of the home directory of the used version of vim.
+For example, on a redhat or a fedora system, if the used version of vim is
+the 6.3, then ${VIMHOME} == /ush/share/vim/vim63
+
+1. creation of the directory ~/.vim 
+   mkdir ~/.vim
+
+2. creation of the directory of user's syntax :
+   mkdir ~/.vim/syntax
+
+3. recuperation of the files filetype.vim and menu.vim from ${VIMHOME}
+   cp ${VIMHOME}/filetype.vim ~/.vim
+   cp ${VIMHOME}/menu.vim     ~/.vim
+
+4.  modification of the file ~/.vim/filetype.vim by the addition of the two
+    following lines :
+      " FreeFem++ 
+      au BufNewFile,BufRead *.edp			setf edp
+   For the respect of the alphabetical order, to place this lines after 
+   the lines associated with the fortran.
+
+5. to put the provided file `edp.vim' in the directory ~/.vim/syntax
+
+
+and it is all.
+
+
+--------------------------------------------------------------------------
+`ow to install the vim's highlighting rules for FreeFem++
+--------------------------------------------------------------------------
+The rules defined in the file `edp.vim' are compatible with the version 1.4-1
+of FreeFem++.

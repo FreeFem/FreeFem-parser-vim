@@ -1,0 +1,35 @@
+--------------------------------------------------------------------------
+Installation des regles de colloration syntaxique de FreeFemm++ pour vim 
+--------------------------------------------------------------------------
+
+Soit ${VIMHOME} le repertoire contenant la version de vim utilisee.
+Sous un systeme redhat ou fedora, si la version de vim utilisee est la 6.3,
+alors ${VIMHOME} == /ush/share/vim/vim63
+
+1. creation du repertoire .vim dans son HOMEDIR :
+   mkdir ~/.vim
+
+2. creation du repertoire des syntaxes personnelles :
+   mkdir ~/.vim/syntax
+
+3. recuperation des fichiers filetype.vim et menu.vim de ${VIMHOME}
+   cp ${VIMHOME}/filetype.vim ~/.vim
+   cp ${VIMHOME}/menu.vim     ~/.vim
+
+4. activation de l'automatisation de la selection de la syntaxe FreeFem++ :
+   modifier le fichier ~/.vim/filetype.vim par l'ajout des lignes
+      " FreeFem++ 
+      au BufNewFile,BufRead *.edp			setf edp
+   Si l'ordre alphabetique est preserv\'e, alors cet ajout suit les lignes
+   relatives au fortran.
+
+5. placer le fichier 'edp.vim' fourni dans le repertoire ~/.vim/syntax
+
+
+et c'est fini. 
+
+
+--------------------------------------------------------------------------
+Version de FreeFem++ :
+--------------------------------------------------------------------------
+Le fichier edp.vim correspond a la syntaxe de la version 2.4-1 de FreeFem++.
